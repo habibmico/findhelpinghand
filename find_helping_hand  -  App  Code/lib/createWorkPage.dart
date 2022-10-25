@@ -21,7 +21,7 @@ class _CreateWorkPageState extends State<CreateWorkPage> {
   Future createWorkOwner(
       String phone, String type, String workName, String workPrice) async {
     http.Response response = await http
-        .post(Uri.parse("http://192.168.31.82:8000/createWorkOwner"), body: {
+        .post(Uri.parse("http://192.168.0.104:8000/createWorkOwner"), body: {
       "phone": phone,
       "workName": workName,
       "workPrice": workPrice,
@@ -45,7 +45,7 @@ class _CreateWorkPageState extends State<CreateWorkPage> {
 
   Future getallworkList(String phone, String type) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/getallworkList"),
+        Uri.parse("http://192.168.0.104:8000/getallworkList"),
         body: {"phone": phone, "type": type});
 
     if (response.statusCode == 200) {
@@ -57,7 +57,7 @@ class _CreateWorkPageState extends State<CreateWorkPage> {
 
   Future removeWorkFromList(String phone, String workName, String type) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/removeWorkFromList"),
+        Uri.parse("http://192.168.0.104:8000/removeWorkFromList"),
         body: {"phone": phone, "type": type, "workName": workName});
 
     if (response.statusCode == 200) {

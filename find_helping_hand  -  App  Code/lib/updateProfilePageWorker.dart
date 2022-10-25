@@ -30,7 +30,7 @@ class _UpdateProfileWorkerState extends State<UpdateProfileWorker> {
 
   Future updateAddress(String address, String phone) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/updateProfileInfoAddress"),
+        Uri.parse("http://192.168.0.104:8000/updateProfileInfoAddress"),
         body: {"address": address, "phone": phone});
 
     if (response.statusCode == 200) {
@@ -50,7 +50,7 @@ class _UpdateProfileWorkerState extends State<UpdateProfileWorker> {
 
   Future updateWorkingHour(String workingHour, String phone) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/updateProfileInfoWorkingHour"),
+        Uri.parse("http://192.168.0.104:8000/updateProfileInfoWorkingHour"),
         body: {"workingHour": workingHour, "phone": phone});
 
     if (response.statusCode == 200) {

@@ -36,7 +36,7 @@ class _showProfilePageState extends State<showProfilePage> {
   Future sendReview(
       String workerPhone, String ownerPhone, String review, String type) async {
     http.Response response = await http
-        .post(Uri.parse("http://192.168.31.82:8000/writeReview"), body: {
+        .post(Uri.parse("http://192.168.0.104:8000/writeReview"), body: {
       "workerPhone": workerPhone,
       "ownerPhone": ownerPhone,
       "review": review,
@@ -68,7 +68,7 @@ class _showProfilePageState extends State<showProfilePage> {
 
   Future getReview(String workerPhone, String type) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/getReview"),
+        Uri.parse("http://192.168.0.104:8000/getReview"),
         body: {"workerPhone": workerPhone, "type": type});
 
     if (response.statusCode == 200) {

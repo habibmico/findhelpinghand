@@ -45,7 +45,7 @@ class _RegistrationPageWorkerState extends State<RegistrationPageWorker> {
     try {
       // your endpoint and request method
       var request = http.MultipartRequest(
-          'POST', Uri.parse("http://192.168.31.82:8000/registrationWorker"));
+          'POST', Uri.parse("http://192.168.0.104:8000/registrationWorker"));
 
       request.fields.addAll({
         'name': name.text,

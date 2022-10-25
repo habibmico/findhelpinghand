@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
 
   Future getall(String userType, String userPhone) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/getall"),
+        Uri.parse("http://192.168.0.104:8000/getall"),
         body: {"userType": userType, "userPhone": userPhone});
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
 
   Future getProfileInfo(String nameOf, String typeOf) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/getProfileInfo"),
+        Uri.parse("http://192.168.0.104:8000/getProfileInfo"),
         body: {"name": nameOf, "type": typeOf});
 
     if (response.statusCode == 200) {
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
 
   Future deleteProfile(String nameOf, String Phone, String typeOf) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/deleteProfile"),
+        Uri.parse("http://192.168.0.104:8000/deleteProfile"),
         body: {"name": nameOf, "phone": Phone, "type": typeOf});
 
     if (response.statusCode == 200) {
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
   Future applyAppoint(
       String workerPhone, String ownerPhone, String type) async {
     http.Response response = await http
-        .post(Uri.parse("http://192.168.31.82:8000/applyAppoint"), body: {
+        .post(Uri.parse("http://192.168.0.104:8000/applyAppoint"), body: {
       "workerPhone": workerPhone,
       "ownerPhone": ownerPhone,
       "type": type

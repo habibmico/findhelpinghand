@@ -563,21 +563,3 @@ def getAppointedWorkers(request):
             return HttpResponse(json_data, content_type="application/json")
 
 
-@csrf_exempt
-def policecomplain(request):
-    if request.method == 'POST':
-        type = request.POST.get("type", False)
-        phone = request.POST.get("phone", False)
-        complain = request.POST.get("complain", False)
-        if type == "HomeOwner":
-            with connection.cursor() as cursor_1:
-                cursor_1.execute(
-                    "INSERT INTO policecompainowner(ownerphone,complain) VALUES ('"+str(phone) + "' , '"+str(complain) + "' )")
-                connection.commit()
-        else:
-            with connection.cursor() as cursor_1:
-                cursor_1.execute(
-                    "INSERT INTO policecompainworker(workerphone,complain) VALUES ('"+str(phone) + "' , '"+str(complain) + "' )")
-                connection.commit()
-
-    return HttpResponse("Hello, world. You're at the polls index.")

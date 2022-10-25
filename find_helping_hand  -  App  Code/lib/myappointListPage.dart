@@ -15,7 +15,7 @@ class myAppointListPage extends StatefulWidget {
 class _myAppointListPageState extends State<myAppointListPage> {
   Future getAppointList(String workerPhone, String type) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/getAppointList"),
+        Uri.parse("http://192.168.0.104:8000/getAppointList"),
         body: {"workerPhone": workerPhone, "type": type});
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
@@ -27,7 +27,7 @@ class _myAppointListPageState extends State<myAppointListPage> {
   Future acceptAppoint(
       String workerPhone, String ownerPhone, String type) async {
     http.Response response = await http
-        .post(Uri.parse("http://192.168.31.82:8000/acceptAppoint"), body: {
+        .post(Uri.parse("http://192.168.0.104:8000/acceptAppoint"), body: {
       "workerPhone": workerPhone,
       "ownerPhone": ownerPhone,
       "type": type
@@ -42,7 +42,7 @@ class _myAppointListPageState extends State<myAppointListPage> {
   Future rejectAppoint(
       String workerPhone, String ownerPhone, String type) async {
     http.Response response = await http
-        .post(Uri.parse("http://192.168.31.82:8000/rejectAppoint"), body: {
+        .post(Uri.parse("http://192.168.0.104:8000/rejectAppoint"), body: {
       "workerPhone": workerPhone,
       "ownerPhone": ownerPhone,
       "type": type

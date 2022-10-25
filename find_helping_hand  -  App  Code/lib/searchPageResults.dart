@@ -26,7 +26,7 @@ class _SearchPageResultsState extends State<SearchPageResults> {
   TextEditingController searchController = TextEditingController();
   Future getProfileInfo(String nameOf, String typeOf) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/getProfileInfo"),
+        Uri.parse("http://192.168.0.104:8000/getProfileInfo"),
         body: {"name": nameOf, "type": typeOf});
 
     if (response.statusCode == 200) {
@@ -38,7 +38,7 @@ class _SearchPageResultsState extends State<SearchPageResults> {
 
   Future getall(String searchItem) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/get_search_results"),
+        Uri.parse("http://192.168.0.104:8000/get_search_results"),
         body: {"search_item": searchItem});
 
     if (response.statusCode == 200) {

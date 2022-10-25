@@ -17,7 +17,7 @@ class _myWorkersPageState extends State<myWorkersPage> {
   TextEditingController salaryController = TextEditingController();
   Future getAppointedWorkers(String userPhone, String type) async {
     http.Response response = await http.post(
-        Uri.parse("http://192.168.31.82:8000/getAppointedWorkers"),
+        Uri.parse("http://192.168.0.104:8000/getAppointedWorkers"),
         body: {"userPhone": userPhone, "type": type});
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
@@ -29,7 +29,7 @@ class _myWorkersPageState extends State<myWorkersPage> {
   Future rejectAppoint(
       String workerPhone, String ownerPhone, String type) async {
     http.Response response = await http
-        .post(Uri.parse("http://192.168.31.82:8000/rejectAppoint"), body: {
+        .post(Uri.parse("http://192.168.0.104:8000/rejectAppoint"), body: {
       "workerPhone": workerPhone,
       "ownerPhone": ownerPhone,
       "type": type

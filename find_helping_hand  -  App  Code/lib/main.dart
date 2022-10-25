@@ -43,7 +43,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController password = TextEditingController();
 
   Future login() async {
-    String finalUrl = "http://192.168.31.82:8000/login";
+    String finalUrl = "http://192.168.0.104:8000/login";
     var url = Uri.parse(finalUrl);
     var response = await http.post(url, body: {
       "name": name.text,

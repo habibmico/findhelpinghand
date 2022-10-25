@@ -48,7 +48,7 @@ class _RegistrationPageUserState extends State<RegistrationPageUser> {
     try {
       // your endpoint and request method
       var request = http.MultipartRequest(
-          'POST', Uri.parse("http://192.168.31.82:8000/registration_homeowner"));
+          'POST', Uri.parse("http://192.168.0.104:8000/registration_homeowner"));
 
       request.fields.addAll({
         'name': name.text,
